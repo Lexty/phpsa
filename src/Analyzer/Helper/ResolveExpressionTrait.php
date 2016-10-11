@@ -34,16 +34,28 @@ trait ResolveExpressionTrait
     }
 
     /**
+     * Finds statements of the given class name.
+     *
+     * @param \PhpParser\Node[] $nodes
+     * @param string $stmtClass
+     * @return \PhpParser\Node\Stmt
+     */
+    protected function findStatement(array $nodes, $stmtClass)
+    {
+        foreach ($this->traverseArray($nodes) as $node) {
+            if ($node instanceof $stmtClass) {
+                yield $node;
+            }
+        }
+    }
+
+    /**
      * @param \PhpParser\Node[] $nodes
      * @return \PhpParser\Node\Stmt\Return_
      */
     protected function findReturnStatement(array $nodes)
     {
-        foreach ($this->traverseArray($nodes) as $node) {
-            if ($node instanceof Return_) {
-                yield $node;
-            }
-        }
+        return $this->findStatement($nodes, Return_::class);
     }
 
     /**

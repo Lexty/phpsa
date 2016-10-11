@@ -91,4 +91,6 @@ phpsa:
             enabled:              true
         yoda_condition:
             enabled:              true
+        return_and_yield_in_one_method:
+            enabled:              true
 

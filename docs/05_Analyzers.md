@@ -36,7 +36,7 @@ Checks for casts that try to cast a type to itself.
 
 #### CompareWithArray
 
-Checks for `{type array} > 1` and similar and suggests use of `count()`. 
+Checks for `{type array} > 1` and similar and suggests use of `count()`.
 
 #### ConstantNaming
 
@@ -129,6 +129,10 @@ Checks for use of old rand, srand, getrandmax functions and suggests alternative
 #### RegularExpressions
 
 Checks that regular expressions are syntactically correct.
+
+#### ReturnAndYieldInOneMethod
+
+Checks for using return and yield statements in a one method and discourages it.
 
 #### StaticUsage
 
